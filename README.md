@@ -22,7 +22,7 @@ Key Features
 
     Data Preprocessing: * Median imputation for missing values (specifically total_bedrooms).
 
-        Feature scaling using StandardScaler for numerical consistency.
+    Feature scaling using StandardScaler for numerical consistency.
 
     Unsupervised Learning: * Applied KMeans Clustering to Latitude and Longitude to create a "Neighborhood" feature.
 
