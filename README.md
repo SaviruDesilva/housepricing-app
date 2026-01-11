@@ -1,78 +1,93 @@
 🏠 House Price Prediction with Clustering
 
-This project is an end-to-end Machine Learning web application built using Streamlit, which predicts house prices by combining unsupervised learning (KMeans clustering) and supervised learning (Random Forest regression).
+An end-to-end Machine Learning web application that predicts house prices by combining Unsupervised Learning (KMeans Clustering) and Supervised Learning (Random Forest Regression).
 
-The application groups houses based on geographical location (longitude and latitude) using KMeans clustering, then uses the cluster labels along with housing features to improve the accuracy of house price predictions.
-Trained models and scalers are saved and loaded using Joblib for efficient reuse and faster inference.
+By grouping houses based on geographic coordinates (Latitude/Longitude), the model captures location-based trends more effectively, leading to more accurate price estimations.
+🚀 Live Demo
 
-🚀 Features
+Check out the web app here: House Price Predictor
+✨ Features
 
-📊 Interactive data exploration with Streamlit
+    Hybrid ML Approach: Integrates KMeans labels into a Random Forest Regressor to improve accuracy.
 
-🌍 Location-based clustering using KMeans
+    Interactive UI: Built with Streamlit for real-time price predictions based on user input.
 
-🤖 House price prediction using Random Forest Regressor
+    Data-Driven Insights: Uses the California Housing Dataset to provide realistic estimations.
 
-💾 Model persistence using Joblib
+    Model Persistence: Models and scalers are serialized using joblib for fast, efficient inference without retraining.
 
-📈 Model evaluation using R² score
-
-🏡 Real-time house price prediction via user inputs
+    Automated Preprocessing: Handles missing values via median imputation and feature scaling using StandardScaler.
 
 🧠 Machine Learning Workflow
 
-Data loading and preprocessing
+    Data Preprocessing: Cleaning the California Housing dataset and handling missing values.
 
-Handling missing values using median imputation
+    Feature Engineering: * KMeans Clustering: Identifying geographic clusters based on longitude and latitude.
 
-Feature scaling with StandardScaler
+        Scaling: Standardizing numerical features for better model performance.
 
-Location-based clustering using KMeans
+    Model Training: Training a Random Forest Regressor on both raw features and the generated cluster labels.
 
-Model training with Random Forest Regression
+    Evaluation: Validating performance using the R² Score.
 
-Saving & loading models using Joblib
-
-Real-time prediction through Streamlit UI
+    Deployment: Exporting the trained model (.pkl) and serving it via a Streamlit web interface.
 
 🛠️ Tech Stack
 
-Python
+    Frontend: Streamlit
 
-Streamlit
+    Language: Python
 
-Pandas, NumPy
+    Data Analysis: Pandas, NumPy
 
-Matplotlib
+    Machine Learning: Scikit-learn
 
-Scikit-learn
+    Model Storage: Joblib
 
-Joblib
+    Visualization: Matplotlib, Seaborn
 
 📁 Dataset
 
-The project uses the California Housing Dataset, which includes:
+The project utilizes the California Housing Dataset, which contains:
 
-Housing median age
+    MedInc: Median income in block group
 
-Total rooms and bedrooms
+    HouseAge: Median house age in block group
 
-Population and households
+    AveRooms: Average number of rooms per household
 
-Median income
+    AveBedrms: Average number of bedrooms per household
 
-Geographic coordinates (longitude & latitude)
+    Population: Block group population
 
-🌐 Deployment
+    AveOccup: Average number of household members
 
-The application is deployed on Streamlit Cloud, enabling users to access the model directly from a web browser without local installation.
+    Latitude & Longitude: Geographic location
+
+⚙️ Local Installation
+
+    Clone the repository:
+    Bash
+
+git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
+cd YOUR_REPO_NAME
+
+Create a virtual environment:
+Bash
+
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+Install dependencies:
+Bash
+
+pip install -r requirements.txt
+
+Run the application:
+Bash
+
+    streamlit run app.py
 
 🎯 Use Case
 
-This project demonstrates:
-
-The power of combining clustering with regression
-
-How to build a full ML pipeline
-
-How to deploy a production-ready ML application
+This project serves as a practical demonstration of how Unsupervised Learning can be used as a feature engineering step to enhance Supervised Learning models. It is particularly useful for real estate analytics and spatial data science.
