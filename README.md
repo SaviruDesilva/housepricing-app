@@ -1,93 +1,89 @@
 🏠 House Price Prediction with Clustering
 
-An end-to-end Machine Learning web application that predicts house prices by combining Unsupervised Learning (KMeans Clustering) and Supervised Learning (Random Forest Regression).
+An end-to-end Machine Learning web application that predicts California house prices. This project uniquely combines Unsupervised Learning (KMeans) with Supervised Learning (Random Forest) to capture geographic price trends more effectively.
 
-By grouping houses based on geographic coordinates (Latitude/Longitude), the model captures location-based trends more effectively, leading to more accurate price estimations.
-🚀 Live Demo
+🔗 Live Demo: House Price Predictor App
+🚀 Project Overview
 
-Check out the web app here: House Price Predictor
-✨ Features
+Predicting real estate prices is complex because "location" is more than just coordinates—it's about neighborhoods. This application groups houses based on their Longitude and Latitude using KMeans clustering. These cluster labels are then used as a feature for the Random Forest Regressor, significantly improving the model's ability to understand local market trends.
+Key Features
 
-    Hybrid ML Approach: Integrates KMeans labels into a Random Forest Regressor to improve accuracy.
+    🌍 Location-Based Intelligence: Uses KMeans to cluster properties by geographic coordinates.
 
-    Interactive UI: Built with Streamlit for real-time price predictions based on user input.
+    🤖 Hybrid ML Modeling: Combines clustering labels with structural features for prediction.
 
-    Data-Driven Insights: Uses the California Housing Dataset to provide realistic estimations.
+    📊 Interactive UI: A sleek Streamlit dashboard for real-time inference.
 
-    Model Persistence: Models and scalers are serialized using joblib for fast, efficient inference without retraining.
+    💾 Efficient Inference: Pre-trained models and scalers are managed via Joblib for instant results.
 
-    Automated Preprocessing: Handles missing values via median imputation and feature scaling using StandardScaler.
+    📈 Performance Metrics: Real-time evaluation using R² score.
 
 🧠 Machine Learning Workflow
 
-    Data Preprocessing: Cleaning the California Housing dataset and handling missing values.
+    Data Preprocessing: * Median imputation for missing values (specifically total_bedrooms).
 
-    Feature Engineering: * KMeans Clustering: Identifying geographic clusters based on longitude and latitude.
+        Feature scaling using StandardScaler for numerical consistency.
 
-        Scaling: Standardizing numerical features for better model performance.
+    Unsupervised Learning: * Applied KMeans Clustering to Latitude and Longitude to create a "Neighborhood" feature.
 
-    Model Training: Training a Random Forest Regressor on both raw features and the generated cluster labels.
+    Supervised Learning: * Trained a Random Forest Regressor using both the original housing features and the new cluster labels.
 
-    Evaluation: Validating performance using the R² Score.
+    Model Persistence: * Saved the trained model, scaler, and KMeans object using Joblib.
 
-    Deployment: Exporting the trained model (.pkl) and serving it via a Streamlit web interface.
+    Deployment: * Built the frontend with Streamlit and deployed to Streamlit Cloud.
 
 🛠️ Tech Stack
 
-    Frontend: Streamlit
-
     Language: Python
 
-    Data Analysis: Pandas, NumPy
+    Web Framework: Streamlit
 
-    Machine Learning: Scikit-learn
+    ML Libraries: Scikit-learn (Random Forest, KMeans, StandardScaler)
 
-    Model Storage: Joblib
+    Data Handling: Pandas, NumPy
 
-    Visualization: Matplotlib, Seaborn
+    Visualization: Matplotlib
+
+    Model Serialization: Joblib
 
 📁 Dataset
 
-The project utilizes the California Housing Dataset, which contains:
+The project utilizes the California Housing Dataset, which includes:
 
-    MedInc: Median income in block group
+    Geographic: Longitude, Latitude
 
-    HouseAge: Median house age in block group
+    Structural: Total rooms, total bedrooms, house age
 
-    AveRooms: Average number of rooms per household
+    Demographic: Population, households, median income
 
-    AveBedrms: Average number of bedrooms per household
+    Target: Median house value
 
-    Population: Block group population
+⚙️ Local Setup and Installation
 
-    AveOccup: Average number of household members
-
-    Latitude & Longitude: Geographic location
-
-⚙️ Local Installation
+To run this project locally, follow these steps:
 
     Clone the repository:
     Bash
 
-git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
-cd YOUR_REPO_NAME
+git clone https://github.com/your-username/house-price-prediction.git
+cd house-price-prediction
 
 Create a virtual environment:
 Bash
 
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+source venv/bin/activate  # On Windows use: venv\Scripts\activate
 
 Install dependencies:
 Bash
 
 pip install -r requirements.txt
 
-Run the application:
+Run the Streamlit app:
 Bash
 
     streamlit run app.py
 
 🎯 Use Case
 
-This project serves as a practical demonstration of how Unsupervised Learning can be used as a feature engineering step to enhance Supervised Learning models. It is particularly useful for real estate analytics and spatial data science.
+This project serves as a practical example of Feature Engineering through clustering. By turning raw coordinates into meaningful geographic clusters, the model can account for the "location, location, location" rule of real estate more accurately than raw coordinates alone.
