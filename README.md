@@ -2,7 +2,7 @@
 
 An end-to-end Machine Learning web application that predicts California house prices. This project uniquely combines Unsupervised Learning (KMeans) with Supervised Learning (Random Forest) to capture geographic price trends more effectively.
 
-🔗 Live Demo: House Price Predictor App
+🔗 Live Demo: https://housepricing-app-g6qvpmqmnbvcpsepzf6oh3.streamlit.app/
 🚀 Project Overview
 
 Predicting real estate prices is complex because "location" is more than just coordinates—it's about neighborhoods. This application groups houses based on their Longitude and Latitude using KMeans clustering. These cluster labels are then used as a feature for the Random Forest Regressor, significantly improving the model's ability to understand local market trends.
