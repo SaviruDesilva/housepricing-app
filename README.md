@@ -49,7 +49,7 @@ If you want to run this app on your own computer, follow these steps:
 ## 📂 Project Structure
 
 ```text
-umentation
+
 ├── housing.csv          # The dataset containing housing features
 ├── app.py               # The main Streamlit application code
 ├── model.pkl            # Trained Random Forest and KMeans models
