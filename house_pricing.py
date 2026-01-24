@@ -42,7 +42,7 @@ df = df[['longitude', 'latitude']]
 ss = StandardScaler()
 scale = ss.fit_transform(df)
 
-fig1, ax1 = plt.subplots(figsize=(8, 5))
+fig1, ax1 = plt.subplots(figsize=(6, 4))
 ax1.scatter(scale[:, 0], scale[:, 1])
 ax1.set_title("Before Clustering")
 ax1.set_xlabel("Longitude")
@@ -56,7 +56,7 @@ for k in range(1, 10):
     model.fit(scale)
     wcss_error.append(model.inertia_)
 
-fig2, ax2 = plt.subplots(figsize=(8, 5))
+fig2, ax2 = plt.subplots(figsize=(6, 4))
 ax2.plot(range(1, 10), wcss_error)
 ax2.set_title("Elbow Method")
 ax2.set_xlabel("Number of clusters")
@@ -69,7 +69,7 @@ pred = model.fit_predict(scale)
 
 df["clusters"] = pred 
 
-fig3, ax3 = plt.subplots(figsize=(8, 5))
+fig3, ax3 = plt.subplots(figsize=(6, 4))
 for c in df["clusters"].unique():
     temp = df[df["clusters"] == c]
     ax3.scatter(temp["longitude"], temp["latitude"], label=f"Cluster {c}", s=5)
@@ -79,6 +79,7 @@ ax3.set_xlabel("Longitude")
 ax3.set_ylabel("Latitude")
 ax3.legend()
 st.pyplot(fig3)
+plt.close(fig3)
 
 # -----------------------------
 # Prepare data for ML
