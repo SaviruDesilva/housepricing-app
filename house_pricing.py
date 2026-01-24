@@ -42,7 +42,7 @@ df = df[['longitude', 'latitude']]
 ss = StandardScaler()
 scale = ss.fit_transform(df)
 
-fig1, ax1 = plt.subplots(figsize=(2, 4))
+fig1, ax1 = plt.subplots(figsize=(5, 4))
 ax1.scatter(scale[:, 0], scale[:, 1])
 ax1.set_title("Before Clustering")
 ax1.set_xlabel("Longitude")
